@@ -5,6 +5,9 @@ package-lock.json
 # Build output
 dist/
 build/
+Frontend-S3/
+whisper-server/
+uploads/
 
 # Environment files
 .env
