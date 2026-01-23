@@ -1,6 +1,6 @@
 # EMR System - Backend API
 
-A comprehensive Electronic Medical Records (EMR) system backend built with NestJS, TypeORM, and PostgreSQL.
+A Voice-Based Electronic Medical Records (EMR) system backend built with NestJS, ReactJS, and PostgreSQL.
 
 ## Project Structure
 
@@ -8,26 +8,17 @@ This project consists of three main components:
 
 | Component | Description | Repository |
 |-----------|-------------|------------|
-| **Backend API** (this repo) | NestJS REST API server | [SeniorProject](https://github.com/Thamer-AlSaiad/SeniorProject) |
-| **Frontend** | React + TypeScript web application | [SeniorProject-Frontend](https://github.com/Thamer-AlSaiad/SeniorProject-Frontend) |
-| **Whisper Server** | Python AI transcription service | [SeniorProject-Whisper](https://github.com/Thamer-AlSaiad/SeniorProject-Whisper) |
+| **Backend API**  | NestJS REST API server | [SeniorProject-Backend](https://github.com/Thamer-AlSaiad/SeniorProject) |
+| **Frontend** | React + TypeScript web application | [SeniorProject-Frontend](https://github.com/Thamer-AlSaiad/SeniorProject/tree/main/Frontend-S3) |
+| **Whisper Server** | Python AI transcription service | [Whisper-Server](https://github.com/Thamer-AlSaiad/SeniorProject/tree/main/whisper-server) |
 
-## Features
-
-- Multi-role authentication (Admin, Doctor, Patient)
-- Organization/Clinic management
-- Doctor scheduling and availability
-- Patient appointment booking
-- Medical records management
-- Real-time voice transcription for clinical notes
-- Allergy and vital signs tracking
+## Project Document
+[Project Thesis](https://docs.google.com/document/d/1Y4fvAMv7-OlI__PHGbeR8E1tKHU8NCPfnKh0xqSMPSo/edit?usp=sharing)
 
 ## Tech Stack
 
-- **Framework**: NestJS
+- **Framework**: NestJS & ReactJs
 - **Database**: PostgreSQL with TypeORM
-- **Authentication**: JWT
-- **Real-time**: WebSockets (Socket.IO)
 
 ## Prerequisites
 
@@ -38,7 +29,7 @@ This project consists of three main components:
 ## Installation
 
 ```bash
-npm install
+npm install - cd Frontend-S3 && npm install - cd whisper-server && pip install requirements.txt
 ```
 
 ## Environment Variables
@@ -61,30 +52,23 @@ WHISPER_SERVER_URL=http://localhost:8000
 ## Running the Application
 
 ```bash
-# Development
+# Backend after installing node modules
 npm run start:dev
 
-# Production
-npm run build
-npm run start:prod
+# Frontend after installing node modules
+cd Frontend-S3 && npm run dev
+
+# Whisper server after installing requirements
+cd whisper-server && .\venv\Scripts\Activate
+python server.py
 ```
 
-## API Documentation
+## APIs
 
 The API runs on `http://localhost:3000` by default.
+The frontend runs on `http://localhost:5173` by default.
+The AI runs on `https://localhost:8000` by default.
 
-### Main Endpoints
 
-- `/api/auth` - Authentication
-- `/api/admin` - Admin operations
-- `/api/doctor` - Doctor operations
-- `/api/patient` - Patient operations
-
-## Related Projects
-
-- [Frontend Application](https://github.com/Thamer-AlSaiad/SeniorProject-Frontend)
-- [Whisper Transcription Server](https://github.com/Thamer-AlSaiad/SeniorProject-Whisper)
-
-## License
 
 MIT
